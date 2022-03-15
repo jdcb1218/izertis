@@ -1,0 +1,4 @@
+access all izertis:
+  title: 'izertis  access control'
+  description: 'izertis access control when accessing module.'
+  restrict access: TRUE

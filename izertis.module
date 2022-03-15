@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * @author Juan Ceballos
+* Primarily Drupal hooks and global API functions.
+ */
+
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+
+function izertis_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.izertis':
+
+        $query =[];
+        $options = array('attributes' => ['class' => ['btn-config'], 
+                        'rel' => 'nofollow','target' => '_blank']);
+ 
+        $form['search'] = array(
+          '#type' => 'markup',
+          '#markup' => Link::fromTextAndUrl(t('Izertis search'), Url::fromRoute('izertis_forms_search', $query, $options))->toString() . '<br',
+        );
+
+        $form['config'] = array(
+          '#type' => 'markup',
+          '#markup' => Link::fromTextAndUrl(t('Izertis Configuration'), Url::fromRoute('izertis_forms_contribute', $query, $options))->toString() . '<br',
+        );
+
+      return $form;
+  }
+}

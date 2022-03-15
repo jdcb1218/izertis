@@ -1,0 +1,15 @@
+izertis_forms_contribute:
+  path: 'izertis/configuration'
+  defaults:
+    _form: '\Drupal\izertis\Form\ContributeForm'
+    _title: 'Rest(Service) Api (Marvel)'
+  requirements:
+    _permission: 'access administration pages'
+
+izertis_forms_search:
+  path: 'izertis/search'
+  defaults:
+    _form: '\Drupal\izertis\Form\SearchForm'
+    _title: 'Search in Api Rest of (Marvel)'
+  requirements:
+    _permission: 'access administration pages'

@@ -1,0 +1,12 @@
+name: izertis
+type: module
+description: 'Consumer Api(Rest) Marvel'
+package: Custom
+autor: Juan Ceballos
+core_version_requirement: ^8.8.0 || ^9 || ^10
+version: '1.1.0'
+configure: izertis_forms_contribute
+dependencies:
+  - node
+  - block
+  - views
